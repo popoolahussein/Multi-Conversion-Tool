@@ -1,9 +1,3 @@
-/*
-1 meter = 3.281 feet
-1 liter = 0.264 gallon
-1 kilogram = 2.204 pound
-*/
-
 const inputEl = document.getElementById('input');
 const buttonEl = document.getElementById('button');
 const lengthPEl = document.getElementById('length');
@@ -39,5 +33,18 @@ function render() {
   renderVolume();
   renderMass();
 }
+
+inputEl.addEventListener('input', () => {
+  inputEl.value = inputEl.value.replace(/[^0-9.]/g, '');
+  if ((inputEl.value.match(/\./g) || []).length > 1) {
+    inputEl.value = inputEl.value.substring(0, inputEl.value.length - 1);
+  }
+});
+
+inputEl.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    render();
+  }
+});
 
 buttonEl.addEventListener('click', render);
