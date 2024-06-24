@@ -1,3 +1,176 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  margin: 0.0001px;
+  padding: 0.0001px;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('/src/images/convert.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.main {
+  display: grid;
+  flex-flow: row wrap;
+  place-self: center center;
+  justify-content: center;
+  text-align: center;
+  max-width: 550px;
+  margin: 10px;
+  height: 100%;
+  background: whitesmoke;
+}
+
+.accessible-label {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+#light-icon {
+  display: none;
+}
+
+.upper-box {
+  display: flex;
+  flex-flow: row wrap;
+  height: max-content;
+  min-height: 285px;
+  justify-content: center;
+  align-items: center;
+  padding: 34px 34px 14px;
+  background-color: #1f5b7e;
+  margin-bottom: 22px;
+}
+
+.head {
+  width: 100%;
+  font-size: 28px;
+  color: #fff;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-box {
+  background-color: #1f5b7e;
+  color: #fff;
+  width: 100%;
+  max-width: 117px;
+  height: 83px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  font-weight: 800;
+  font-size: 58px;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 30px;
+}
+
+.input-box::placeholder {
+  color: #fff;
+  opacity: 0.1;
+}
+
+.mode-section {
+  width: 100%;
+}
+
+.btn {
+  background: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 117px;
+  height: 42px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.lower-box {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
+  min-height: max-content;
+}
+
+.conversion-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #ffc;
+  width: 100%;
+  max-width: 500px;
+  min-height: 110px;
+  border-radius: 5px;
+  margin-bottom: 23px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.conversion-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #005073;
+  margin-top: 31px;
+  margin-left: 77px;
+  margin-right: 77px;
+  word-break: break-all;
+}
+
+.conversion-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #353535;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+  color: #fff;
+  margin-top: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.darkmode-box {
+  background-color: #1f2937;
+}
+
+.darkmode-cb {
+  background-color: #273549;
+}
+
+.darkmode-ct {
+  color: #42a9ed;
+}
+
+.darkmode-cp {
+  color: #fff;
+}
