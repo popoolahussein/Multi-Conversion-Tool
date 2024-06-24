@@ -1,21 +1,43 @@
-import '../css/style.css';
-import javascriptLogo from '../images/javascript.svg';
-import viteLogo from '../../public/vite.svg';
-import setupCounter from './counter';
+/*
+1 meter = 3.281 feet
+1 liter = 0.264 gallon
+1 kilogram = 2.204 pound
+*/
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a class="font-medium text-[#646cff] hover:text-[#535bf2]" href="#" target="_blank">
-      <img src="${viteLogo}" class="h-24 will-change-[filter] transition-[filter] duration-300 p-6 hover:drop-shadow-xl" alt="Vite logo" />
-    </a>
-    <a class="font-medium text-[#646cff] hover:text-[#535bf2]" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="h-24 will-change-[filter] transition-[filter] duration-300 p-6 hover:drop-shadow-xl" alt="JavaScript logo" />
-    </a>
-    <h1 class="text-5xl leading-tight">Hello Vite!</h1>
-    <div class="p-8">
-      <button class="border text-base font-medium hover:border-[#747bff] bg-[#f9f9f9] transition-[border-color] cursor-pointer duration-300 px-5 py-2.5 rounded-lg border-solid border-transparent" id="counter" type="button"></button>
-    </div>
-  </div>
-`;
+const inputEl = document.getElementById('input');
+const buttonEl = document.getElementById('button');
+const lengthPEl = document.getElementById('length');
+const volumePEl = document.getElementById('volume');
+const massPEl = document.getElementById('mass');
 
-setupCounter(document.querySelector('#counter'));
+function renderLength() {
+  const feet = inputEl.value * 3.281;
+  const meters = inputEl.value / 3.281;
+  lengthPEl.innerText = `${inputEl.value} meters = ${feet.toFixed(3)} feet | ${
+    inputEl.value
+  } feet = ${meters.toFixed(3)} meters`;
+}
+
+function renderVolume() {
+  const gallons = inputEl.value * 0.264;
+  const liters = inputEl.value / 0.264;
+  volumePEl.innerText = `${inputEl.value} liters = ${gallons.toFixed(3)} gallons | ${
+    inputEl.value
+  } gallons = ${liters.toFixed(3)} liters`;
+}
+
+function renderMass() {
+  const pounds = inputEl.value * 2.204;
+  const kilograms = inputEl.value / 2.204;
+  massPEl.innerText = `${inputEl.value} kilograms = ${pounds.toFixed(3)} pounds | ${
+    inputEl.value
+  } pounds = ${kilograms.toFixed(3)} kilograms`;
+}
+
+function render() {
+  renderLength();
+  renderVolume();
+  renderMass();
+}
+
+buttonEl.addEventListener('click', render);
