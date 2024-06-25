@@ -141,6 +141,7 @@ body {
   line-height: 20px;
   text-align: center;
   color: #353535;
+  word-break: break-all;
 }
 
 .material-symbols-outlined {
